@@ -9,9 +9,6 @@ class Student_db (models.Model):
     section=models.CharField(max_length=255,null=False)
     s_profile_pic=models.ImageField(blank=True, null=True)
 
-
-
-
 class Teachers_db(models.Model):
     id=models.AutoField(primary_key=True)
     t_student=models.OneToOneField(User,on_delete=models.CASCADE)
@@ -34,9 +31,6 @@ class chat_bot_AI (models.Model):
     base_id=models.ForeignKey(User,on_delete=models.CASCADE)
     bot_chat=models.TextField()
     time=models.TimeField()
-
-
-
 
 class T_list_student_db(models.Model):
     id=models.AutoField(primary_key=True)
@@ -66,8 +60,6 @@ class T_student_scoresdb(models.Model):
     name_studnet=models.ForeignKey(T_list_student_db,on_delete=models.CASCADE)
     STD_score=models.IntegerField()
 
-
-    
 
 class Student_subject_db(models.Model):
     id=models.AutoField(primary_key=True)
