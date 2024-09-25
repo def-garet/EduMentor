@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
-# Create your models here.
+
+#models
+
 class Student_db (models.Model):
     id=models.AutoField(primary_key=True)
     s_student=models.OneToOneField(User,on_delete=models.CASCADE)
@@ -52,14 +54,12 @@ class T_material(models.Model):
     id=models.AutoField(primary_key=True)
     m_name=models.TextField()
     material=models.TextField()
-
-    
+   
 class T_student_scoresdb(models.Model):
     id=models.AutoField(primary_key=True)  
     quiz_name=models.ForeignKey(T_StorageQuizdb,on_delete=models.CASCADE)
     name_studnet=models.ForeignKey(T_list_student_db,on_delete=models.CASCADE)
     STD_score=models.IntegerField()
-
 
 class Student_subject_db(models.Model):
     id=models.AutoField(primary_key=True)
