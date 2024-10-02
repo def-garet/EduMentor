@@ -73,13 +73,11 @@ def teacher_dashboard(request): #for teacher dashboard
     ''')
        
         return render(request, 'dashboard_teacher/dashboard_teacher.html',{"records":records})
-        # print(user_chat)
+        
    
     return render(request, 'dashboard_teacher/dashboard_teacher.html',{"records":records})
 
-def teacher_eroll_student(request):         #for teacher dashboard
-    # if request.user == None:
-    #     redirect(index)
+def teacher_eroll_student(request):  #for teacher dashboard
     print(request.user)
     if request.method == "POST":
         username=request.POST['s_username']
@@ -120,13 +118,8 @@ def login_page(request): #student login
     return render(request, 'loginsignin/authentication-login.html')
 
 
-
-
-
 def student_dashboard(request): #for student dashboard ari di si progress
     return render(request,'dashboard_teacher/dashboard_student.html')
-
-
 
 def student_quiz(request): # student quiz - muni makita ni student
     # return render(request,'')
